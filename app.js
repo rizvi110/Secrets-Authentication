@@ -158,7 +158,7 @@ app.get("/logout",function(req,res){
 
 app.post("/register", function(req, res) {
   User.register({
-    username: req.body.username
+    email: req.body.username
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -175,7 +175,7 @@ app.post("/register", function(req, res) {
 
 app.post("/login", function(req, res) {
   const user = new User({
-    username: req.body.username,
+    email: req.body.username,
     password: req.body.password
   });
 
