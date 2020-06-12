@@ -1,4 +1,4 @@
-//jshint esversion:6
+//jshint esversion: 6
 require('dotenv').config();
 const express=require("express");
 const bodyParser=require("body-parser");
@@ -158,7 +158,7 @@ app.get("/logout",function(req,res){
 
 app.post("/register", function(req, res) {
   User.register({
-    email: req.body.username
+    username: req.body.username
   }, req.body.password, function(err, user) {
     if (err) {
       console.log(err);
@@ -175,7 +175,7 @@ app.post("/register", function(req, res) {
 
 app.post("/login", function(req, res) {
   const user = new User({
-    email: req.body.username,
+    username: req.body.username,
     password: req.body.password
   });
 
